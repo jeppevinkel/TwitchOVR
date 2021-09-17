@@ -1,0 +1,27 @@
+﻿<Application x:Class="TwitchOVR.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TwitchOVR"
+             xmlns:viewModels="clr-namespace:TwitchOVR.ViewModels"
+             xmlns:views="clr-namespace:TwitchOVR.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/CloseButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/MinimizeButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:TwitchViewModel}">
+                <views:TwitchView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:VrPipeViewModel}">
+                <views:VrPipeView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
